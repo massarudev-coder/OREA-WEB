@@ -1,6 +1,15 @@
 const loginForm = document.querySelector("#loginForm");
 const loginMessage = document.querySelector("#loginMessage");
 const submitButton = document.querySelector("#submitButton");
+const passwordInput = document.querySelector("#password");
+const togglePasswordButton = document.querySelector("#togglePassword");
+
+togglePasswordButton.addEventListener("click", () => {
+  const isPasswordVisible = passwordInput.type === "text";
+  passwordInput.type = isPasswordVisible ? "password" : "text";
+  togglePasswordButton.textContent = isPasswordVisible ? "Mostrar" : "Ocultar";
+  togglePasswordButton.setAttribute("aria-pressed", String(!isPasswordVisible));
+});
 
 function showLoginError(message) {
   loginMessage.textContent = message;
@@ -23,10 +32,7 @@ loginForm.addEventListener("submit", async (event) => {
       `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${encodeURIComponent(config.firebaseWebApiKey)}`,
       {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "X-OREA-Request": "1",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           email: loginForm.elements.email.value.trim(),
           password: loginForm.elements.password.value,
@@ -47,7 +53,10 @@ loginForm.addEventListener("submit", async (event) => {
 
     const sessionResponse = await fetch("/api/sessao", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "X-OREA-Request": "1",
+      },
       body: JSON.stringify({ idToken: credentials.idToken }),
     });
     const session = await sessionResponse.json();

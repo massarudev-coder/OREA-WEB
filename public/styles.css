@@ -164,6 +164,22 @@ button, input, textarea, select { font: inherit; }
 }
 .field textarea { min-height: 100px; resize: vertical; }
 .field input:focus, .field textarea:focus, .field select:focus { border-color: var(--gold-dark); }
+.password-input-wrap { position: relative; }
+.password-input-wrap input { padding-right: 82px; }
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  padding: 6px 2px;
+  transform: translateY(-50%);
+  border: 0;
+  background: transparent;
+  color: var(--gold);
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+.password-toggle:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 3px; }
 .auth-form-card form .button { width: 100%; min-height: 54px; margin-top: 12px; border-radius: 14px; }
 .form-message { min-height: 22px; margin: 14px 0 0; color: var(--danger); font-size: 13px; line-height: 1.5; }
 .form-message.success { color: #9bd0a7; }

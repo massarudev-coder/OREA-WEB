@@ -27,7 +27,10 @@
         </div>
         <div class="field">
           <label for="password">Senha</label>
-          <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Sua senha" required>
+          <div class="password-input-wrap">
+            <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Sua senha" required>
+            <button id="togglePassword" class="password-toggle" type="button" aria-controls="password" aria-pressed="false">Mostrar</button>
+          </div>
         </div>
         <button id="submitButton" class="button button-primary" type="submit">Entrar no painel</button>
         <p id="loginMessage" class="form-message" role="status" aria-live="polite"></p>
