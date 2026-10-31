@@ -8,21 +8,18 @@
   <link rel="stylesheet" href="/styles.css">
   <script src="/js/login.js" defer></script>
 </head>
-<body class="auth-shell">
-  <aside class="auth-art">
-    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true">✦</span><span><strong>OREA</strong><small>COSMIC VAULT</small></span></a>
-    <div class="auth-art-copy">
-      <p class="eyebrow">ACESSO AO OBSERVATÓRIO</p>
-      <h2>Cuide de uma coleção que veio de longe.</h2>
-      <p>Entre para gerenciar os fragmentos e compartilhar novas descobertas com o mundo.</p>
-    </div>
-    <p class="auth-caption">Uma coleção extraordinária, um universo de possibilidades.</p>
-  </aside>
-  <main class="auth-panel">
-    <section class="auth-card">
+<body class="auth-page">
+  <main class="auth-wrap">
+    <a class="brand auth-brand" href="/" aria-label="Voltar para a vitrine OREA">
+      <span class="brand-mark" aria-hidden="true">✦</span>
+      <span><strong>OREA</strong><small>COSMIC VAULT</small></span>
+    </a>
+    <section class="auth-heading">
       <p class="eyebrow">PAINEL OREA</p>
       <h1>Bem-vindo de volta</h1>
-      <p class="auth-subtitle">Acesse sua conta administrativa para continuar.</p>
+      <p class="auth-subtitle">Entre para cuidar de uma coleção verdadeiramente fora deste mundo.</p>
+    </section>
+    <section class="auth-form-card">
       <form id="loginForm">
         <div class="field">
           <label for="email">E-mail</label>
@@ -37,6 +34,7 @@
       </form>
       <a class="back-link" href="/">← Voltar para a vitrine</a>
     </section>
+    <p class="auth-caption">Acesso exclusivo para administradores</p>
   </main>
 </body>
 </html>
