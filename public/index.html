@@ -1,13 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OREA</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#060511">
+  <title>OREA | Fragmentos cósmicos</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/js/store.js" defer></script>
 </head>
 <body>
-    <h1>OREA</h1>
-    <p>O servidor está rodando!</p>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="OREA, página inicial">
+      <span class="brand-mark" aria-hidden="true">✦</span>
+      <span><strong>OREA</strong><small>COSMIC VAULT</small></span>
+    </a>
+    <a class="button button-outline" href="/login.html">Área do administrador</a>
+  </header>
 
+  <main>
+    <section class="hero">
+      <p class="eyebrow">PEÇAS AUTÊNTICAS DO UNIVERSO</p>
+      <h1>Um pedaço do cosmos,<br><span>ao seu alcance.</span></h1>
+      <p class="hero-copy">Explore uma coleção extraordinária de meteoritos e fragmentos raros.</p>
+      <a class="text-link" href="#catalogo">Explorar coleção <span aria-hidden="true">↓</span></a>
+    </section>
+
+    <section id="catalogo" class="catalog-section" aria-labelledby="catalog-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">COLEÇÃO OREA</p>
+          <h2 id="catalog-title">Encontrados no infinito</h2>
+        </div>
+        <label class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <input id="busca" type="search" placeholder="Buscar fragmento..." aria-label="Buscar produtos">
+        </label>
+      </div>
+      <div id="categorias" class="category-list" role="group" aria-label="Filtrar por categoria"></div>
+      <div id="listaProdutos" class="product-grid" aria-live="polite">
+        <p class="empty-state">Carregando a coleção...</p>
+      </div>
+      <p id="atualizacao" class="refresh-note" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand brand-small" href="/"><span class="brand-mark" aria-hidden="true">✦</span><strong>OREA</strong></a>
+    <p>Fragmentos extraordinários. Histórias de outro mundo.</p>
+  </footer>
 </body>
 </html>

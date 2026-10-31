@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#060511">
+  <title>Administração | OREA</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/js/admin.js" defer></script>
+</head>
+<body>
+  <header class="site-header admin-header">
+    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true">✦</span><span><strong>OREA</strong><small>PAINEL ADMINISTRATIVO</small></span></a>
+    <div class="admin-header-actions">
+      <span id="adminEmail" class="admin-email"></span>
+      <button id="logoutButton" class="button button-outline button-small" type="button">Sair</button>
+    </div>
+  </header>
+
+  <main class="admin-main">
+    <div class="admin-title">
+      <div>
+        <p class="eyebrow">GERENCIAMENTO DA COLEÇÃO</p>
+        <h1>Produtos</h1>
+      </div>
+      <a class="button button-outline" href="/" target="_blank" rel="noopener">Ver vitrine ↗</a>
+    </div>
+
+    <div class="admin-layout">
+      <section class="panel" aria-labelledby="formTitle">
+        <h2 id="formTitle">Novo produto</h2>
+        <form id="productForm">
+          <div class="field">
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" maxlength="120" required>
+          </div>
+          <div class="field">
+            <label for="descricao">Descrição</label>
+            <textarea id="descricao" name="descricao" maxlength="1000" required></textarea>
+          </div>
+          <div class="field">
+            <label for="preco">Preço (R$)</label>
+            <input id="preco" name="preco" type="number" min="0" step="0.01" required>
+          </div>
+          <div class="field">
+            <label for="quantidade">Quantidade em estoque</label>
+            <input id="quantidade" name="quantidade" type="number" min="0" step="1" required>
+          </div>
+          <div class="field">
+            <label for="categoria">Categoria</label>
+            <select id="categoria" name="categoria">
+              <option value="Sideritos">Sideritos</option>
+              <option value="Palasitos">Palasitos</option>
+              <option value="Moldavitas">Moldavitas</option>
+              <option value="Condritos">Condritos</option>
+              <option value="Marcianos">Marcianos</option>
+              <option value="Lunares">Lunares</option>
+              <option value="Outros">Outros</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="fotoUrl">URL da imagem (HTTPS)</label>
+            <input id="fotoUrl" name="fotoUrl" type="url" placeholder="https://..." required>
+          </div>
+          <button id="saveButton" class="button button-primary" type="submit">Cadastrar produto</button>
+          <button id="cancelEdit" class="button button-outline" type="button" hidden>Cancelar edição</button>
+          <p id="formMessage" class="form-message" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="panel" aria-labelledby="listTitle">
+        <h2 id="listTitle">Produtos cadastrados</h2>
+        <p id="adminStatus" class="admin-status" role="status" aria-live="polite">Carregando produtos...</p>
+        <div id="adminProductList" class="admin-list"></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
